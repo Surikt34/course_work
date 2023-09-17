@@ -5,20 +5,8 @@ from pprint import pprint
 from urllib.parse import urlencode
 import requests
 
-# APP_ID = '51741073'
-# OAUTH_BASE_URL = 'https://oauth.vk.com/authorize'
-# params = {
-#     'client_id': APP_ID,
-#     'redirect_uri': 'https://oauth.vk.com/blank.html',
-#     'display': 'page',
-#     'scope': 'status, photos',
-#     'response_type': 'token'
-# }
-#
-# oauth_url = f'{OAUTH_BASE_URL}?{urlencode(params)}'
-# print(oauth_url)
 
-token = 'vk1.a.CHkvbnXnWVLMLfpmBqBSGR_DC1lrI09HPnNTk1ILQdXe0ajJBNinq1MJy2cDw0_8txs9VB63F-y3fkkrkKkOW3qBO-Pqtr9Lp95tSeFGlZ44Sj0_A_eqs1H4Cva-6awzSDd-1UNHCrrxpvKE-5slZ1GLh8RF6_0lTbK3yB7EXrjLRstqL_BHNI-E07FIgpnsema4IxN0R8AMDDzOUlOs5g'
+token = 'vk_token'
 class VKAPIClient:
     API_BASE_URL = 'https://api.vk.com/method'
     def _build_url(self, api_method):
@@ -71,7 +59,7 @@ for file_name, url in result_list:
 
 base_url = 'https://cloud-api.yandex.net'
 params = {'path': 'FotoVK'}
-headers = {'Authorization': '***'}
+headers = {'Authorization': 'ya_token'}
 response = requests.put(f'{base_url}/v1/disk/resources', params=params, headers=headers)
 
 if 200 <= response.status_code < 300:
